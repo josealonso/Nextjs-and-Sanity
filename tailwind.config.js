@@ -3,6 +3,7 @@ module.exports = {
   content: [
     './components/BackgroundCircles.tsx',
     './components/Hero.tsx',
+    './components/About.tsx',
     './pages/**/*.tsx',
     '.components/**/*.tsx',
   ],
