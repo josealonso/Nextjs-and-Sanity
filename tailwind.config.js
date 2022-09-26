@@ -8,6 +8,7 @@ module.exports = {
     './components/WorkExperience.tsx',
     './components/ExperienceCard.tsx',
     './components/Skills.tsx',
+    './components/Projects.tsx',
     './components/Skill.tsx',
     './pages/**/*.tsx',
     '.components/**/*.tsx',
