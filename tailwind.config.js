@@ -10,6 +10,7 @@ module.exports = {
     './components/Skills.tsx',
     './components/Projects.tsx',
     './components/Skill.tsx',
+    './components/ContactMe.tsx',
     './pages/**/*.tsx',
     '.components/**/*.tsx',
   ],
