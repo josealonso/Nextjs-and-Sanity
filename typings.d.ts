@@ -24,6 +24,11 @@ export interface PageInfo extends SanityBody {
     profilePic: Image;
 }
 
+export interface Social extends SanityBody {
+    _type: "social";
+    socialProfile: string;
+}
+
 export interface Technology extends SanityBody {
     _type: "skill";
     image: Image;
