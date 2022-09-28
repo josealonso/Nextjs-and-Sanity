@@ -1,3 +1,5 @@
+import { Url } from "url";
+
 interface SanityBody {
     _createdAt: string;
     _id: string;
@@ -26,7 +28,7 @@ export interface PageInfo extends SanityBody {
 
 export interface Social extends SanityBody {
     _type: "social";
-    socialProfile: string;
+    url: string;
 }
 
 export interface Technology extends SanityBody {
