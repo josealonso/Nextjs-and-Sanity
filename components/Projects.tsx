@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import React from 'react'
+import { urlFor } from '../sanity';
+import { Project } from '../typings';
 
-type Props = {}
+type Props = {
+    projects: Project[];
+}
 
-export default function Projects({ }: Props) {
-    const projects = [1, 2, 3, 4, 5];
-    // let i = 0;
+export default function Projects({ projects }: Props) {
+    // const projects = [1, 2, 3, 4, 5];
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -32,7 +35,7 @@ export default function Projects({ }: Props) {
                             transition={{ duration: 1.2 }}
                             viewport={{ once: true }}
 
-                            src="../public/musician.jpg"
+                            src={urlFor(project?.image).url()}
                             alt=""
                         />
 
@@ -40,11 +43,23 @@ export default function Projects({ }: Props) {
                             <h4 className='text-4xl font-semibold text-center'>
                                 <span className='underline decoration-[#f7ab0a]/50'>
                                     Project {i + 1} of {projects.length}
-                                </span>
+                                </span>{" "}
+                                {project?.title}
                             </h4>
 
+                            <div className='flex items-center space-x-2 justify-center'>
+                                {project?.technologies.map((technology =>
+                                    <img
+                                        className='h-10 w-10'
+                                        key={technology._id}
+                                        src={urlFor(technology.image).url()}
+                                        alt=""
+                                    />
+                                ))}
+                            </div>
+
                             <p className='text-lg text-center md:text-left'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores saepe omnis laudantium natus recusandae modi repellat porro, autem consequatur labore in perferendis tenetur ducimus minima odit fugit! Explicabo, maxime ipsam.
+                                {project?.summary}
                             </p>
                         </div>
                     </div>
